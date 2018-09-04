@@ -1,0 +1,13 @@
+
+syntax = "proto3";
+
+service TodoApp {
+  rpc ListTodos(ListTodosParams) returns (stream Todo) {}
+  rpc CreateTodo(Todo) returns (Todo) {}
+}
+
+message ListTodosParams {}
+
+message Todo {
+  string content = 1;
+}
